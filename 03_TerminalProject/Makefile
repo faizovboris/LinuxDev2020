@@ -1,11 +1,11 @@
-TARGET = main
+TARGET = show
 FLAGS = -O3 -Wall -lncursesw -lncurses
 CC = gcc
 
-all: main
+all: show
 
-main: main.c
+show: Show.c
 	$(CC) -g $^ -o $@ $(FLAGS)
 
 clean:
-	rm -rf *~ *.o main
+	rm -rf *~ *.o show
