@@ -10,5 +10,3 @@ allclean:
 	rm -rf RegexpMatcher configure *~ *.o *.log *.in *.m4 config.h* \
 		   Makefile depcomp config.status COPYING INSTALL \
 		   compile install-sh missing stamp-h1 autom4te.cache .deps
-
-# autoreconf -fisv
