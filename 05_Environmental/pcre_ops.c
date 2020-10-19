@@ -12,7 +12,6 @@
 
 struct PcreResult processString(char* pattern_str, char *subject_str, int is_use_ucp) {
     struct PcreResult ans;
-    ans.is_error = 0;
     ans.answer = malloc(MAX_ERROR_MESSAGE_LEN * sizeof(*ans.answer));
 
     PCRE2_SPTR pattern = (PCRE2_SPTR)pattern_str;
@@ -29,7 +28,6 @@ struct PcreResult processString(char* pattern_str, char *subject_str, int is_use
     }
 
     if (re == NULL) {
-        ans.is_error = 1;
         PCRE2_UCHAR buffer[256];
         pcre2_get_error_message(errnum, buffer, sizeof(buffer));
         snprintf(ans.answer,
@@ -42,7 +40,6 @@ struct PcreResult processString(char* pattern_str, char *subject_str, int is_use
     int rc = pcre2_match(re, subject, subject_length, 0, 0, match_data, NULL);
 
     if (rc < 0) {
-        ans.is_error = 1;
         switch(rc) {
         case PCRE2_ERROR_NOMATCH:
             snprintf(ans.answer, MAX_ERROR_MESSAGE_LEN, "No match\n");

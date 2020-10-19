@@ -1,5 +1,4 @@
 struct PcreResult {
-    int is_error;
     char *answer;
 };
 
