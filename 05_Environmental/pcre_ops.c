@@ -56,11 +56,17 @@ struct PcreResult processString(char* pattern_str, char *subject_str, int is_use
     PCRE2_SIZE *ovector = pcre2_get_ovector_pointer(match_data);
 
     size_t cur_ans_pos = 0, cur_ans_capacity = MAX_ERROR_MESSAGE_LEN;
+    int spaces = 0;
+    int tmp = ovector[2 * rc - 2];
+    do {
+        tmp /= 10;
+        ++spaces;
+    } while (tmp);
     for (int i = 0; i < rc; i++) {
         size_t try_write = 0;
         try_write = snprintf(ans.answer + cur_ans_pos,
                              cur_ans_capacity - cur_ans_pos,
-                             "%2ld: %.*s\n", ovector[2*i], 
+                             "%*ld: %.*s\n", spaces, ovector[2*i], 
                                  (int)(ovector[2*i+1] - ovector[2*i]),
                                  subject + ovector[2*i]);
         while (try_write > cur_ans_capacity - cur_ans_pos) {
@@ -68,7 +74,7 @@ struct PcreResult processString(char* pattern_str, char *subject_str, int is_use
             ans.answer = realloc(ans.answer, cur_ans_capacity * sizeof(*ans.answer));
             try_write = snprintf(ans.answer + cur_ans_pos,
                                  cur_ans_capacity - cur_ans_pos,
-                                 "%2ld: %.*s\n", ovector[2*i], 
+                                 "%*ld: %.*s\n", spaces, ovector[2*i], 
                                      (int)(ovector[2*i+1] - ovector[2*i]),
                                      subject + ovector[2*i]);
         }
