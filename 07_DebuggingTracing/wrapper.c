@@ -7,9 +7,10 @@
 typedef int (*prev_func_type)(int, const char *, int);
 
 int unlinkat(int dirfd, const char *pathname, int flags) {
-    prev_func_type prev_func = dlsym(RTLD_NEXT, "unlinkat");
     if (strstr(pathname, "FIX") != 0) {
+        errno = EPERM;
         return EPERM;
     }
+    prev_func_type prev_func = dlsym(RTLD_NEXT, "unlinkat");
     return prev_func(dirfd, pathname, flags);
 }
