@@ -17,11 +17,15 @@ AC_PROG_CC
 # Checks for libraries.
 
 # Checks for header files.
-AC_CHECK_HEADERS([stdlib.h])
+AC_CHECK_HEADERS([stddef.h stdlib.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
+AC_TYPE_SIZE_T
+AC_CHECK_TYPES([ptrdiff_t])
 
 # Checks for library functions.
+AC_FUNC_MALLOC
+AC_FUNC_REALLOC
 
 AC_CONFIG_FILES([Makefile
                  tests/Makefile
