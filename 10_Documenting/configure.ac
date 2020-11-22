@@ -11,6 +11,7 @@ AC_CONFIG_HEADERS([config.h])
 
 # Checks for programs.
 AC_PROG_CC
+AC_PATH_PROG([HELP2MAN], [help2man])
 
 # Checks for libraries.
 

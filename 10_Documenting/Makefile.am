@@ -1,6 +1,6 @@
 bin_PROGRAMS=guesser
 guesser_SOURCES = main.c roman.c
-pkgdata_DATA=update_pot_po ru/LC_MESSAGES/guesser.mo
+pkgdata_DATA=update_pot_po ru/LC_MESSAGES/guesser.mo guesser.1
 
 @DX_RULES@
 
@@ -36,9 +36,12 @@ run_russian_roman: guesser
 doxygen:
 	make doxygen-doc
 
-manfile: guesser
-	help2man ./guesser > guesser.man.1
-	man ./guesser.man.1
+%.1:	%
+	-$(HELP2MAN) --no-info --output=$@ --name='@PACKAGE_NAME@' ./$<
+
+manfile: guesser.1
+	help2man ./guesser > guesser.1
+	man ./guesser.1
 
 all-local:	doxygen-doc
 
