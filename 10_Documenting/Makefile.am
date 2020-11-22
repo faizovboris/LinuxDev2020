@@ -33,8 +33,7 @@ run_english_roman: guesser
 run_russian_roman: guesser
 	LANGUAGE=ru_RU ./guesser -r
 
-doxygen:
-	make doxygen-doc
+doxygen: doxygen-doc
 
 %.1:	%
 	-$(HELP2MAN) --no-info --output=$@ --name='@PACKAGE_NAME@' ./$<
