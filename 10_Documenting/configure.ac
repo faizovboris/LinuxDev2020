@@ -25,7 +25,7 @@ AC_FUNC_REALLOC
 AC_CHECK_FUNCS([setlocale])
 
 AC_CONFIG_FILES([Makefile
-				 Doxyfile
-				 guesser.md
-				 roman.md])
+                 Doxyfile
+                 guesser.md
+                 roman.md])
 AC_OUTPUT
