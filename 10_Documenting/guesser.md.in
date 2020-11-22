@@ -1,0 +1,29 @@
+/// @mainpage
+# @PACKAGE_NAME@ v. @PACKAGE_VERSION@
+
+## Intro
+Guesser is utility for guessing number
+
+This is a program that tries to guess user number.
+
+This program knows your number!
+
+It can work with integer and roman numbers
+
+## Usage
+
+Usage: guesser [OPTIONS]
+
+    --help      print this help, then exit
+
+    --version   print version number, then exit
+
+    -r          use roman numbers instead of ususal integers
+
+
+## Source
+
+See sources in:
+ - `main.c`
+ - `roman.h`
+ - `roman.c`

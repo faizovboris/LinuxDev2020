@@ -1,0 +1,15 @@
+/// @page roman-library
+# How to use Roman library
+
+## Intro
+
+Roman.c is a library for translation integer numbers to romans and vice versa.
+It also has function to print roman numbers.
+
+## Usage
+
+How to use all of this. More API info in @ref library
+
+## Source
+
+See sources in `roman.h` and `roman.c`
