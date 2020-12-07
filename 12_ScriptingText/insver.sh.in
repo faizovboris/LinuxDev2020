@@ -1,0 +1,5 @@
+STR="\\* COMMENT:: @PACKAGE_NAME@, @PACKAGE_VERSION@: `date` *\\"
+sed -i "1 s/^\/\* COMMENT::.*/\/$STR//; t;1 i\/$STR/" *.c *.h
+echo $STR
+
+# sed -i "1 s/^\/\* COMMENT::.*/\/* COMMENT:: @PACKAGE_NAME@, @PACKAGE_VERSION@: `date` \*\//;     t;    1 i\/\* COMMENT:: @PACKAGE_NAME@, @PACKAGE_VERSION@: `date` \*\/" *.c *.h
