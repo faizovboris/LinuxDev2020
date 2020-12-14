@@ -5,6 +5,16 @@ autoreconf -fisv
 make
 ```
 
+## Чтобы установить в определенный каталог:
+```
+./configure --prefix /dir/to/install
+```
+
+## Чтобы установить в систему:
+```
+sudo make install
+```
+
 ## Чтобы запустить английский вариант:
 ```
 make run_english
