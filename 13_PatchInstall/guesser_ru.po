@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  09_I18nL10n\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-15 18:28+0300\n"
+"POT-Creation-Date: 2020-12-14 12:44+0300\n"
 "PO-Revision-Date: 2020-11-15 17:44+0300\n"
-"Last-Translator: boris <faizovboris@mail.ru>\n"
+"Last-Translator: boris <faizov@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -18,31 +18,31 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: main.c:23
+#: main.c:20
 msgid "Guess number between"
 msgstr "Загадайте число между"
 
-#: main.c:23
+#: main.c:20
 msgid "and"
 msgstr "и"
 
-#: main.c:32
+#: main.c:29
 msgid "Is number greater than"
 msgstr "Число больше"
 
-#: main.c:32 main.c:34
+#: main.c:29 main.c:31
 msgid "yes"
 msgstr "да"
 
-#: main.c:32 main.c:36
+#: main.c:29 main.c:33
 msgid "no"
 msgstr "нет"
 
-#: main.c:39
+#: main.c:36
 #, c-format
 msgid "Bad input, try again\n"
 msgstr "Неправильный ввод, попробуйте снова\n"
 
-#: main.c:44
+#: main.c:41
 msgid "Number is"
 msgstr "Число равно"

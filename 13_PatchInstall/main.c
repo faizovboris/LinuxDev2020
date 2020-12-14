@@ -6,7 +6,6 @@
 #include <locale.h>
 
 #define _(STRING) gettext(STRING)
-#define LOCALE_PATH "."
 
 #define MIN_NUM 0
 #define MAX_NUM 100
@@ -14,10 +13,8 @@
 int main(int argc, char *argv[])
 {
     setlocale (LC_ALL, "");
-    if (getenv("PO_LOCAL"))
-        bindtextdomain("guesser", LOCALE_PATH);
-    else
-        bindtextdomain("guesser", "usr/share/locale");
+    // char *dir = dirname(realpath(argv[0], NULL));
+    bindtextdomain("guesser", LOCALEDIR);
     textdomain ("guesser");
 
     printf("%s %d %s %d.\n", _("Guess number between"), MIN_NUM, _("and"), MAX_NUM);

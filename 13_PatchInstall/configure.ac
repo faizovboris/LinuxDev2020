@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([numberGuesser], [1.0], [faizovboris])
+AC_INIT([numberGuesser], [2.0], [faizovboris], [guessername])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([main.c])
 AC_CONFIG_HEADERS([config.h])

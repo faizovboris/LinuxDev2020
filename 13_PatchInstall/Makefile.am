@@ -1,6 +1,8 @@
 bin_PROGRAMS=guesser
 guesser_SOURCES =main.c
-pkgdata_DATA=update_pot_po ru/LC_MESSAGES/guesser.mo
+pkgdata_DATA=ru/LC_MESSAGES/guesser.mo
+AM_CFLAGS = -D LOCALEDIR='"$(localedir)"'
+pkgdatadir = $(localedir)/ru/LC_MESSAGES
 
 init_pot_po:	guesser.pot
 	msginit -i guesser.pot -o guesser_ru.po -l ru
@@ -20,10 +22,11 @@ guesser.pot:	main.c
 update_pot_po: guesser.pot guesser_ru.po
 
 run_english: guesser
-	./guesser
+	${bindir}/guesser
 
 run_russian: guesser
-	LANGUAGE=ru_RU PO_LOCAL=1 ./guesser
+	LANGUAGE=ru_RU ${bindir}/guesser
 
 gitclean:
 	git clean -fd
+	rm -rf *~
